@@ -1,95 +1,152 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <style>
-    body{
-      margin:0;
-      font-family:sans-serif;
-      background:#0f0f0f;
-      color:white;
-    }
-
-    h2{
-      text-align:center;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:15px;
-      padding:15px;
-      padding-bottom:90px;
-    }
-
-    .card{
-      background:#1c1c1c;
-      border-radius:15px;
-      padding:10px;
-      text-align:center;
-    }
-
-    .card img{
-      width:100%;
-      border-radius:10px;
-    }
-
-    .bottom{
-      position:fixed;
-      bottom:0;
-      width:100%;
-      display:flex;
-      justify-content:space-around;
-      background:#1c1c1c;
-      padding:10px 0;
-    }
-
-    .bottom div{
-      font-size:12px;
-      text-align:center;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>GreedFarm Shop</title>
+<style>
+body{
+    background:#0f0f12;
+    color:white;
+    font-family:Arial;
+    margin:0;
+}
+.header{
+    text-align:center;
+    padding:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:20px;
+}
+.card{
+    background:#1c1c22;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    cursor:pointer;
+}
+.product{
+    background:#1c1c22;
+    padding:15px;
+    margin:10px;
+    border-radius:12px;
+}
+button{
+    background:#3a3aff;
+    border:none;
+    padding:8px 12px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+.back{
+    margin:10px;
+}
+.cart{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#141418;
+    padding:15px;
+    text-align:center;
+}
+</style>
 </head>
 
 <body>
 
-<h2>HOME</h2>
+<div class="header">HOME</div>
 
-<div class="grid">
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300">
-    <p>🇪🇸 Spain Weed</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300">
-    <p>🍫 Hash</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300">
-    <p>🇺🇸 Cali Weed</p>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300">
-    <p>⭐ Premium Plates</p>
-  </div>
-
+<div id="categories" class="grid">
+    <div class="card" onclick="showProducts('spain')">🇪🇸 Spain Weed</div>
+    <div class="card" onclick="showProducts('hash')">🟥 Hash</div>
+    <div class="card" onclick="showProducts('cali')">🇺🇸 Cali Weed</div>
+    <div class="card" onclick="showProducts('plates')">⭐ Premium Plates</div>
 </div>
 
-<div class="bottom">
-  <div>🏠<br>Home</div>
-  <div>ℹ️<br>Info</div>
-  <div>📂<br>Menu</div>
-  <div>🛍<br>Catégories</div>
-  <div>🛒<br>Panier</div>
+<div id="products" style="display:none;"></div>
+
+<div id="cart" class="cart">
+    🛒 Panier: <span id="total">0€</span>
+    <br><br>
+    <button onclick="checkout()">Commander</button>
 </div>
+
+<script>
+
+let cartTotal = 0;
+
+const shop = {
+spain:[
+{name:"Amnesia Haze",price:20},
+{name:"Critical",price:18},
+{name:"Gelato",price:22},
+{name:"Blue Dream",price:21},
+{name:"Gorilla Glue",price:23},
+{name:"Lemon Skunk",price:19}
+],
+hash:[
+{name:"Dry 120u",price:25},
+{name:"Static",price:35},
+{name:"Frozen",price:40},
+{name:"Maroc",price:15},
+{name:"Ketama",price:17},
+{name:"Triple Filtered",price:28}
+],
+cali:[
+{name:"Zkittlez",price:45},
+{name:"Runtz",price:50},
+{name:"Cookies",price:48},
+{name:"Alien OG",price:52},
+{name:"Sherblato",price:46},
+{name:"Purple Punch",price:44}
+],
+plates:[
+{name:"Premium Gold",price:120},
+{name:"Black Edition",price:140},
+{name:"Limited Red",price:150},
+{name:"Diamond Cut",price:180},
+{name:"VIP Series",price:200},
+{name:"Ultra Elite",price:250}
+]
+};
+
+function showProducts(category){
+    document.getElementById("categories").style.display="none";
+    const container=document.getElementById("products");
+    container.style.display="block";
+    container.innerHTML='<div class="back"><button onclick="goBack()">⬅ Retour</button></div>';
+    
+    shop[category].forEach(item=>{
+        container.innerHTML+=`
+        <div class="product">
+            <h3>${item.name}</h3>
+            <p>${item.price}€</p>
+            <button onclick="addToCart(${item.price})">Ajouter au panier</button>
+        </div>
+        `;
+    });
+}
+
+function goBack(){
+    document.getElementById("categories").style.display="grid";
+    document.getElementById("products").style.display="none";
+}
+
+function addToCart(price){
+    cartTotal += price;
+    document.getElementById("total").innerText = cartTotal + "€";
+}
+
+function checkout(){
+    alert("Merci pour votre commande !\nContactez-nous sur Telegram pour paiement (IBAN / Crypto).");
+}
+
+</script>
 
 </body>
 </html>
