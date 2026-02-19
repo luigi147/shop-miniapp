@@ -19,35 +19,33 @@ min-height:100vh;
 padding:20px;
 }
 
-h1{text-align:center;}
+.menu button{
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:12px;
+background:#00aa55;
+color:white;
+font-size:16px;
+}
 
 .product{
-margin-top:25px;
+margin-top:20px;
 background:rgba(0,0,0,0.6);
 padding:15px;
 border-radius:12px;
 }
 
-video{
-width:100%;
+video{width:100%;border-radius:10px;}
+
+.price{color:#7CFF9B;margin-top:8px;}
+
+.back{
+background:#333;
+padding:10px;
+margin-top:20px;
 border-radius:10px;
-margin-top:10px;
-}
-
-.price{
-margin-top:10px;
-font-size:14px;
-line-height:1.6;
-color:#7CFF9B;
-}
-
-.button{
-background:#00aa55;
-padding:15px;
-border-radius:12px;
-text-align:center;
-margin-top:30px;
-cursor:pointer;
 }
 </style>
 </head>
@@ -58,91 +56,57 @@ cursor:pointer;
 
 <h1>GREEDFARM</h1>
 
-<!-- HASH STATIC -->
+<div id="menu" class="menu">
+<button onclick="openCat('hash')">🧱 Hash</button>
+<button onclick="openCat('cali')">🇺🇸 Cali</button>
+</div>
+
+<div id="hash" style="display:none">
+
 <div class="product">
 <h3>⭐ Static Mountain Giants</h3>
 <video controls><source src="VID_20260129_020719_108.mp4"></video>
-
-<div class="price">
-100g → 1200€<br>
-500g → 5500€<br>
-1kg → 10500€<br>
-10kg → 9000€
-</div>
+<div class="price">100g 1200€<br>500g 5500€<br>1kg 10500€</div>
 </div>
 
-<!-- HASH FRUITELLA -->
 <div class="product">
-<h3>🍓 Hidden Farm Frozen Fruitella</h3>
+<h3>🍓 Frozen Fruitella</h3>
 <video controls><source src="VID_20260212_024354_063.mp4"></video>
-
-<div class="price">
-100g → 1100€<br>
-500g → 4750€<br>
-1kg → 8500€
-</div>
+<div class="price">100g 1100€<br>500g 4750€<br>1kg 8500€</div>
 </div>
 
-<!-- HASH PREMIUM -->
+<div class="back" onclick="back()">⬅ Retour</div>
+</div>
+
+<div id="cali" style="display:none">
+
 <div class="product">
-<h3>❄️ Mountain Giants Premium Frozen</h3>
-<video controls><source src="VID_20260218_211142_496.mp4"></video>
-
-<div class="price">
-100g → 850€<br>
-500g → 3750€<br>
-1kg → 7300€<br>
-10kg → 6500€
-</div>
-</div>
-
-<!-- HASH DRY -->
-<div class="product">
-<h3>🌿 Dry Work</h3>
-<video controls><source src="VID_20260218_212432_315.mp4"></video>
-
-<div class="price">
-100g → 450€<br>
-500g → 1750€<br>
-1kg → 2850€<br>
-5kg → 12300€<br>
-10kg → 22800€
-</div>
-</div>
-
-<!-- CALI COOKIE -->
-<div class="product">
-<h3>🍪 Cali Fortune Cookie</h3>
+<h3>🍪 Fortune Cookie</h3>
 <video controls><source src="VID_20260218_213406_770.mp4"></video>
-
-<div class="price">
-100g → 575€<br>
-250g → 1300€<br>
-500g → 2250€<br>
-1kg → 4000€
-</div>
+<div class="price">100g 575€<br>250g 1300€<br>500g 2250€</div>
 </div>
 
-<!-- CALI RUNTZ -->
 <div class="product">
-<h3>🌈 Cali Super Runtz</h3>
+<h3>🌈 Super Runtz</h3>
 <video controls><source src="VID_20260218_213405_917.mp4"></video>
-
-<div class="price">
-100g → 750€<br>
-250g → 1650€<br>
-500g → 3000€<br>
-1kg → 6000€
-</div>
+<div class="price">100g 750€<br>250g 1650€<br>500g 3000€</div>
 </div>
 
-<div class="button" onclick="pay()">💳 Paiement sécurisé Signal</div>
+<div class="back" onclick="back()">⬅ Retour</div>
+</div>
 
 </div>
 
 <script>
-function pay(){
-window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
+function openCat(cat){
+document.getElementById('menu').style.display='none';
+document.getElementById(cat).style.display='block';
+}
+
+function back(){
+document.getElementById('menu').style.display='block';
+document.getElementById('hash').style.display='none';
+document.getElementById('cali').style.display='none';
 }
 </script>
 
