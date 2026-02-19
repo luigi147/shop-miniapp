@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 <title>GreedFarm</title>
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url("IMG_2044.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    color: white;
+body{
+margin:0;
+font-family:Arial;
+background:url("IMG_2044.jpeg") center/cover no-repeat;
+color:white;
 }
 
-.overlay {
-    background: rgba(0,0,0,0.65);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.overlay{
+background:rgba(0,0,0,0.85);
+min-height:100vh;
+padding:20px;
 }
 
-.top-title {
-    font-size: 34px;
-    font-weight: bold;
-    margin-top: 30px;
-    letter-spacing: 2px;
+h1{text-align:center;}
+
+.product{
+margin-top:25px;
+background:rgba(0,0,0,0.6);
+padding:15px;
+border-radius:12px;
 }
 
-.center-name {
-    font-size: 16px;
-    letter-spacing: 4px;
-    opacity: 0.9;
+video{
+width:100%;
+border-radius:10px;
+margin-top:10px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 420px;
+.price{
+margin-top:10px;
+font-size:14px;
+line-height:1.6;
+color:#7CFF9B;
 }
 
-.card {
-    background: rgba(0,0,0,0.75);
-    padding: 18px;
-    border-radius: 15px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card:hover {
-    background: rgba(0,0,0,0.9);
-}
-
-.payment {
-    background: rgba(0,150,0,0.9);
+.button{
+background:#00aa55;
+padding:15px;
+border-radius:12px;
+text-align:center;
+margin-top:30px;
+cursor:pointer;
 }
 </style>
 </head>
@@ -75,27 +56,93 @@ body {
 
 <div class="overlay">
 
-    <div class="top-title">GREEDFARM</div>
+<h1>GREEDFARM</h1>
 
-    <div class="center-name">
-        Premium Cannabis Store
-    </div>
+<!-- HASH STATIC -->
+<div class="product">
+<h3>⭐ Static Mountain Giants</h3>
+<video controls><source src="VID_20260129_020719_108.mp4"></video>
 
-    <div class="grid">
-        <div class="card">🇪🇸 Spain Weed</div>
-        <div class="card">🟥 Hash</div>
-        <div class="card">🇺🇸 Cali Weed</div>
-        <div class="card">⭐ Premium Plates</div>
-        <div class="card payment" onclick="openPayment()">
-            💳 Paiement sécurisé
-        </div>
-    </div>
+<div class="price">
+100g → 1200€<br>
+500g → 5500€<br>
+1kg → 10500€<br>
+10kg → 9000€
+</div>
+</div>
+
+<!-- HASH FRUITELLA -->
+<div class="product">
+<h3>🍓 Hidden Farm Frozen Fruitella</h3>
+<video controls><source src="VID_20260212_024354_063.mp4"></video>
+
+<div class="price">
+100g → 1100€<br>
+500g → 4750€<br>
+1kg → 8500€
+</div>
+</div>
+
+<!-- HASH PREMIUM -->
+<div class="product">
+<h3>❄️ Mountain Giants Premium Frozen</h3>
+<video controls><source src="VID_20260218_211142_496.mp4"></video>
+
+<div class="price">
+100g → 850€<br>
+500g → 3750€<br>
+1kg → 7300€<br>
+10kg → 6500€
+</div>
+</div>
+
+<!-- HASH DRY -->
+<div class="product">
+<h3>🌿 Dry Work</h3>
+<video controls><source src="VID_20260218_212432_315.mp4"></video>
+
+<div class="price">
+100g → 450€<br>
+500g → 1750€<br>
+1kg → 2850€<br>
+5kg → 12300€<br>
+10kg → 22800€
+</div>
+</div>
+
+<!-- CALI COOKIE -->
+<div class="product">
+<h3>🍪 Cali Fortune Cookie</h3>
+<video controls><source src="VID_20260218_213406_770.mp4"></video>
+
+<div class="price">
+100g → 575€<br>
+250g → 1300€<br>
+500g → 2250€<br>
+1kg → 4000€
+</div>
+</div>
+
+<!-- CALI RUNTZ -->
+<div class="product">
+<h3>🌈 Cali Super Runtz</h3>
+<video controls><source src="VID_20260218_213405_917.mp4"></video>
+
+<div class="price">
+100g → 750€<br>
+250g → 1650€<br>
+500g → 3000€<br>
+1kg → 6000€
+</div>
+</div>
+
+<div class="button" onclick="pay()">💳 Paiement sécurisé Signal</div>
 
 </div>
 
 <script>
-function openPayment() {
-    window.location.href = "https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
+function pay(){
+window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
 }
 </script>
 
