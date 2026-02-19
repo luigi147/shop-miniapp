@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greedfarm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GreedFarm</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
+background:#000;
 color:white;
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-url("IMG_2044.jpeg");
-background-size:cover;
-background-position:center;
 }
 
+/* fond */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:url("IMG_2044.jpeg") center/cover;
+filter:brightness(0.35);
+z-index:-1;
+}
+
+/* logo */
 .logo{
 margin-top:40px;
+width:120px;
+border-radius:25px;
+box-shadow:0 0 25px #00ff88;
 }
 
-.logo img{
-width:140px;
-border-radius:20px;
-box-shadow:0 0 25px #00ff99;
+/* titre */
+.title{
+font-size:38px;
+font-weight:bold;
+margin:10px 0 40px;
+text-shadow:0 0 18px #00ff88;
 }
 
-h1{
-font-size:32px;
-letter-spacing:3px;
-margin:10px 0 30px;
-text-shadow:0 0 10px #00ff99;
-}
-
+/* boutons */
 .btn{
 width:85%;
 margin:14px auto;
 padding:18px;
-border-radius:16px;
+border-radius:14px;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 
-.hash{background:#0f9d58;}
-.cali{background:#00b894;}
-.spain{background:#00a86b;}
-.promo{background:#ff9800;}
-.pay{background:#ff2d2d;}
+.green{background:#16a34a;}
+.cali{background:#14b8a6;}
+.orange{background:#f59e0b;}
+.red{background:#ef4444;}
 
-.btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 18px rgba(255,255,255,0.4);
-}
+/* sections */
+.section{display:none;padding-bottom:40px;}
 
 .back{
-margin-top:25px;
+margin:20px;
 font-size:18px;
-opacity:0.8;
+cursor:pointer;
 }
 
-.section{
-display:none;
-padding:10px;
-}
-
+/* cartes produit */
 .card{
-background:rgba(0,0,0,0.6);
+background:#111;
 margin:18px;
 padding:12px;
-border-radius:14px;
-box-shadow:0 0 15px rgba(0,255,150,0.2);
+border-radius:12px;
+box-shadow:0 0 10px #000;
 }
 
 video{
@@ -83,125 +80,145 @@ border-radius:10px;
 
 .price{
 margin-top:8px;
-font-size:18px;
-color:#00ffcc;
+font-size:17px;
 }
 
+.buy{
+background:#22c55e;
+margin-top:10px;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
-<div id="home">
+<div class="bg"></div>
 
-<div class="logo">
-<img src="IMG_2044.jpeg">
+<!-- HOME -->
+<div id="home" class="section" style="display:block">
+
+<img src="IMG_2044.jpeg" class="logo">
+<div class="title">GREEDFARM</div>
+
+<div class="btn green" onclick="openCat('hash')">🧱 Hash</div>
+<div class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</div>
+<div class="btn green" onclick="openCat('spain')">🇪🇸 Spain</div>
+<div class="btn orange" onclick="openCat('promo')">🔥 Promotion</div>
+
+<div class="btn red"
+onclick="window.location.href='https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I'">
+💳 Paiement
 </div>
-
-<h1>GREEDFARM</h1>
-
-<div class="btn hash" onclick="openSection('hash')">🧱 Hash</div>
-<div class="btn cali" onclick="openSection('cali')">🇺🇸 Cali</div>
-<div class="btn spain" onclick="openSection('spain')">🇪🇸 Spain</div>
-<div class="btn promo" onclick="openSection('promo')">🔥 Promotion</div>
-<div class="btn pay" onclick="window.location.href='https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I'">💳 Paiement</div>
 
 </div>
 
 <!-- HASH -->
 <div id="hash" class="section">
-<h2>Hash</h2>
+<div class="back" onclick="goBack()">⬅ Retour</div>
 
 <div class="card">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<div class="price">Static Mountain Giants — 100g 1200€</div>
+<div class="price">Static Mountain Giants</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260212_024354_063.mp4"></video>
-<div class="price">Hidden Farm Frozen Fruitella — 100g 1100€</div>
+<div class="price">Hidden Farm Frozen Fruitella</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_211142_496.mp4"></video>
-<div class="price">Mountain Giants Premium — 100g 850€</div>
+<div class="price">Premium Frozen</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_212432_315.mp4"></video>
-<div class="price">Dry Work — 100g 450€</div>
+<div class="price">Dry Work</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_213406_222.mov"></video>
-<div class="price">Premium Frozen — 500g 3750€</div>
+<div class="price">Premium Frozen</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="telegram_video.mp4"></video>
-<div class="price">Exclusive Hash — ask price</div>
+<div class="price">Top Hash</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
-<div class="back" onclick="goBack()">⬅ Retour</div>
 </div>
 
 <!-- CALI -->
 <div id="cali" class="section">
-<h2>Cali</h2>
+<div class="back" onclick="goBack()">⬅ Retour</div>
 
 <div class="card">
 <video controls src="VID_20260218_212243_412.mp4"></video>
-<div class="price">Wedding Cake — 100g 575€</div>
+<div class="price">Wedding Cake</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_213405_917.mp4"></video>
-<div class="price">Super Runtz — 100g 750€</div>
+<div class="price">Super Runtz</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_213406_052.mp4"></video>
-<div class="price">Sherbert Gelato — ask price</div>
+<div class="price">Sherbert Gelato</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_213406_351.mp4"></video>
-<div class="price">Rainbow Sherbert — ask price</div>
+<div class="price">Rainbow Sherbert</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
 <div class="card">
 <video controls src="VID_20260218_213406_770.mp4"></video>
-<div class="price">Fortune Cookie — ask price</div>
+<div class="price">Fortune Cookie</div>
+<div class="buy" onclick="order()">Commander</div>
 </div>
 
-<div class="back" onclick="goBack()">⬅ Retour</div>
 </div>
 
 <!-- SPAIN -->
 <div id="spain" class="section">
-<h2>Spain</h2>
-<p>Disponible bientôt…</p>
 <div class="back" onclick="goBack()">⬅ Retour</div>
+Spain bientôt disponible
 </div>
 
 <!-- PROMO -->
 <div id="promo" class="section">
-<h2>Promotions</h2>
-<p>Arrivages et offres bientôt 🔥</p>
 <div class="back" onclick="goBack()">⬅ Retour</div>
+🔥 Promotions bientôt
 </div>
 
 <script>
-
-function openSection(id){
-document.getElementById("home").style.display="none";
+function openCat(id){
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
 document.getElementById(id).style.display="block";
 }
 
 function goBack(){
-location.reload();
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+document.getElementById("home").style.display="block";
 }
 
+function order(){
+window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
+}
 </script>
 
 </body>
