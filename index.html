@@ -46,6 +46,7 @@ background:#333;
 padding:10px;
 margin-top:20px;
 border-radius:10px;
+text-align:center;
 }
 </style>
 </head>
@@ -61,36 +62,27 @@ border-radius:10px;
 <button onclick="openCat('cali')">🇺🇸 Cali</button>
 </div>
 
+<!-- HASH -->
 <div id="hash" style="display:none">
 
-<div class="product">
-<h3>⭐ Static Mountain Giants</h3>
-<video controls><source src="VID_20260129_020719_108.mp4"></video>
-<div class="price">100g 1200€<br>500g 5500€<br>1kg 10500€</div>
-</div>
-
-<div class="product">
-<h3>🍓 Frozen Fruitella</h3>
-<video controls><source src="VID_20260212_024354_063.mp4"></video>
-<div class="price">100g 1100€<br>500g 4750€<br>1kg 8500€</div>
-</div>
+<div class="product"><video controls><source src="VID_20260129_020719_108.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260212_024354_063.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_211142_496.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_212432_315.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_213406_222.mov"></video></div>
+<div class="product"><video controls><source src="telegram_video.mp4"></video></div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
+<!-- CALI -->
 <div id="cali" style="display:none">
 
-<div class="product">
-<h3>🍪 Fortune Cookie</h3>
-<video controls><source src="VID_20260218_213406_770.mp4"></video>
-<div class="price">100g 575€<br>250g 1300€<br>500g 2250€</div>
-</div>
-
-<div class="product">
-<h3>🌈 Super Runtz</h3>
-<video controls><source src="VID_20260218_213405_917.mp4"></video>
-<div class="price">100g 750€<br>250g 1650€<br>500g 3000€</div>
-</div>
+<div class="product"><video controls><source src="VID_20260218_212243_412.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_213405_917.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_213406_052.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_213406_351.mp4"></video></div>
+<div class="product"><video controls><source src="VID_20260218_213406_770.mp4"></video></div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
@@ -102,7 +94,6 @@ function openCat(cat){
 document.getElementById('menu').style.display='none';
 document.getElementById(cat).style.display='block';
 }
-
 function back(){
 document.getElementById('menu').style.display='block';
 document.getElementById('hash').style.display='none';
