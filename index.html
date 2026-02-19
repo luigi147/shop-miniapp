@@ -3,6 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <title>GreedFarm</title>
 
 <style>
@@ -39,8 +42,6 @@ border-radius:12px;
 
 video{width:100%;border-radius:10px;}
 
-.price{color:#7CFF9B;margin-top:8px;}
-
 .back{
 background:#333;
 padding:10px;
@@ -62,42 +63,37 @@ text-align:center;
 <button onclick="openCat('cali')">🇺🇸 Cali</button>
 </div>
 
-<!-- HASH -->
 <div id="hash" style="display:none">
-
 <div class="product"><video controls><source src="VID_20260129_020719_108.mp4"></video></div>
 <div class="product"><video controls><source src="VID_20260212_024354_063.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_211142_496.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_212432_315.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_213406_222.mov"></video></div>
-<div class="product"><video controls><source src="telegram_video.mp4"></video></div>
-
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
-<!-- CALI -->
 <div id="cali" style="display:none">
-
 <div class="product"><video controls><source src="VID_20260218_212243_412.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_213405_917.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_213406_052.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_213406_351.mp4"></video></div>
-<div class="product"><video controls><source src="VID_20260218_213406_770.mp4"></video></div>
-
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
+
+<div class="menu button" onclick="pay()">💳 Paiement</div>
 
 </div>
 
 <script>
+Telegram.WebApp.ready();
+
 function openCat(cat){
 document.getElementById('menu').style.display='none';
 document.getElementById(cat).style.display='block';
 }
+
 function back(){
 document.getElementById('menu').style.display='block';
 document.getElementById('hash').style.display='none';
 document.getElementById('cali').style.display='none';
+}
+
+function pay(){
+window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
 }
 </script>
 
