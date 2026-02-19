@@ -23,10 +23,10 @@ padding:20px;
 }
 
 .logo{
-width:95px;
-border-radius:22px;
-box-shadow:0 0 18px #00ff88;
-margin-top:20px;
+width:90px;
+border-radius:20px;
+box-shadow:0 0 15px #00ff88;
+margin-top:15px;
 }
 
 h1{
@@ -36,23 +36,23 @@ text-shadow:0 0 14px #00ff88;
 
 .btn{
 display:block;
-margin:12px auto;
-padding:14px;
-width:85%;
+margin:10px auto;
+padding:13px;
+width:82%;
 border-radius:14px;
 font-weight:bold;
 font-size:17px;
-text-decoration:none;
+border:none;
 color:white;
 }
 
-.green{background:#1faa55;}
-.cali{background:#24b3a7;}
+.green{background:#19a451;}
+.cali{background:#19b2a6;}
 .orange{background:#f59e0b;}
 .red{background:#ff3b3b;}
 
 .videoBox{
-background:rgba(255,255,255,0.06);
+background:rgba(255,255,255,0.05);
 margin:12px;
 padding:10px;
 border-radius:12px;
@@ -65,33 +65,35 @@ border-radius:10px;
 
 .order{
 display:block;
-background:#1faa55;
+background:#19a451;
 margin-top:8px;
 padding:8px;
 border-radius:10px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:bold;
 }
 
 .lang{
 position:fixed;
 bottom:18px;
-right:14px;
+right:12px;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:6px;
 }
 
 .lang button{
 background:black;
 color:white;
 border:none;
-padding:8px 12px;
+padding:7px 10px;
 border-radius:10px;
 box-shadow:0 0 8px white;
 font-weight:bold;
 }
+
+.page{display:none;}
 
 </style>
 </head>
@@ -103,49 +105,77 @@ font-weight:bold;
 <img src="IMG_2044.jpeg" class="logo">
 <h1>GREEDFARM</h1>
 
-<a class="btn green" href="#hash">🍫 Hash</a>
-<a class="btn cali" href="#cali">🇺🇸 Cali</a>
-<a class="btn green" href="#spain">🇪🇸 Spain</a>
-<a class="btn orange" href="#">🔥 Promotion</a>
-<a class="btn red" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">💳 Payment</a>
+<button class="btn green" onclick="show('hash')">🍫 Hash</button>
+<button class="btn cali" onclick="show('cali')">🇺🇸 Cali</button>
+<button class="btn green" onclick="show('spain')">🇪🇸 Spain</button>
+<button class="btn orange">🔥 Promotion</button>
+
+<a href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">
+<button class="btn red">💳 Payment</button>
+</a>
 
 <!-- HASH -->
-<h2 id="hash">Hash</h2>
+<div id="hash" class="page">
 
 <div class="videoBox">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<p>Static Mountain Giants — 100g 1200€</p>
+<p>Static Mountain Giants</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
 <div class="videoBox">
 <video controls src="telegram_video.mp4"></video>
-<p>Dry Work — 100g 450€</p>
+<p>Dry Work</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
+<button class="btn green" onclick="home()">⬅ Retour</button>
+
+</div>
+
 <!-- CALI -->
-<h2 id="cali">Cali</h2>
+<div id="cali" class="page">
 
 <div class="videoBox">
 <video controls src="VID_20260218_213405_917.mp4"></video>
-<p>Super Runtz — 100g 750€</p>
+<p>Super Runtz</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
 <div class="videoBox">
 <video controls src="VID_20260218_213406_770.mp4"></video>
-<p>Fortune Cookie — 100g 575€</p>
+<p>Fortune Cookie</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
+</div>
+
+<button class="btn cali" onclick="home()">⬅ Retour</button>
+
 </div>
 
 </div>
 
 <div class="lang">
-<button>FR</button>
-<button>IT</button>
-<button>EN</button>
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('it')">IT</button>
+<button onclick="setLang('en')">EN</button>
 </div>
+
+<script>
+
+function show(id){
+document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+document.getElementById(id).style.display="block";
+}
+
+function home(){
+document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+}
+
+function setLang(l){
+alert("Langue : "+l);
+}
+
+</script>
 
 </body>
 </html>
