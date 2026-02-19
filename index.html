@@ -13,7 +13,6 @@ color:white;
 text-align:center;
 }
 
-/* fond */
 .bg{
 position:fixed;
 width:100%;
@@ -23,7 +22,6 @@ filter:brightness(0.35);
 z-index:-1;
 }
 
-/* logo */
 .logo{
 margin-top:40px;
 width:120px;
@@ -31,15 +29,12 @@ border-radius:25px;
 box-shadow:0 0 25px #00ff88;
 }
 
-/* titre */
 .title{
 font-size:38px;
-font-weight:bold;
 margin:10px 0 40px;
 text-shadow:0 0 18px #00ff88;
 }
 
-/* boutons */
 .btn{
 width:85%;
 margin:14px auto;
@@ -55,33 +50,20 @@ cursor:pointer;
 .orange{background:#f59e0b;}
 .red{background:#ef4444;}
 
-/* sections */
 .section{display:none;padding-bottom:40px;}
 
-.back{
-margin:20px;
-font-size:18px;
-cursor:pointer;
-}
+.back{margin:20px;font-size:18px;cursor:pointer;}
 
-/* cartes produit */
 .card{
 background:#111;
 margin:18px;
 padding:12px;
 border-radius:12px;
-box-shadow:0 0 10px #000;
 }
 
-video{
-width:100%;
-border-radius:10px;
-}
+video{width:100%;border-radius:10px;}
 
-.price{
-margin-top:8px;
-font-size:17px;
-}
+.price{margin-top:8px;font-size:17px;}
 
 .buy{
 background:#22c55e;
@@ -89,6 +71,25 @@ margin-top:10px;
 padding:12px;
 border-radius:10px;
 font-weight:bold;
+}
+
+/* bouton langue */
+.lang{
+position:fixed;
+bottom:20px;
+right:15px;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.lang button{
+background:#222;
+color:white;
+border:none;
+padding:8px 10px;
+border-radius:8px;
+font-size:12px;
 }
 </style>
 </head>
@@ -103,12 +104,12 @@ font-weight:bold;
 <img src="IMG_2044.jpeg" class="logo">
 <div class="title">GREEDFARM</div>
 
-<div class="btn green" onclick="openCat('hash')">🧱 Hash</div>
-<div class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</div>
-<div class="btn green" onclick="openCat('spain')">🇪🇸 Spain</div>
-<div class="btn orange" onclick="openCat('promo')">🔥 Promotion</div>
+<div class="btn green" data="hash" onclick="openCat('hash')">🧱 Hash</div>
+<div class="btn cali" data="cali" onclick="openCat('cali')">🇺🇸 Cali</div>
+<div class="btn green" data="spain" onclick="openCat('spain')">🇪🇸 Spain</div>
+<div class="btn orange" data="promo" onclick="openCat('promo')">🔥 Promotion</div>
 
-<div class="btn red"
+<div class="btn red" data="pay"
 onclick="window.location.href='https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I'">
 💳 Paiement
 </div>
@@ -117,92 +118,37 @@ onclick="window.location.href='https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0
 
 <!-- HASH -->
 <div id="hash" class="section">
-<div class="back" onclick="goBack()">⬅ Retour</div>
+<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
 
 <div class="card">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<div class="price">Static Mountain Giants</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260212_024354_063.mp4"></video>
-<div class="price">Hidden Farm Frozen Fruitella</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_211142_496.mp4"></video>
-<div class="price">Premium Frozen</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_212432_315.mp4"></video>
-<div class="price">Dry Work</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_213406_222.mov"></video>
-<div class="price">Premium Frozen</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="telegram_video.mp4"></video>
-<div class="price">Top Hash</div>
-<div class="buy" onclick="order()">Commander</div>
+<div class="buy" onclick="order()" data="order">Commander</div>
 </div>
 
 </div>
 
 <!-- CALI -->
 <div id="cali" class="section">
-<div class="back" onclick="goBack()">⬅ Retour</div>
-
-<div class="card">
-<video controls src="VID_20260218_212243_412.mp4"></video>
-<div class="price">Wedding Cake</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_213405_917.mp4"></video>
-<div class="price">Super Runtz</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_213406_052.mp4"></video>
-<div class="price">Sherbert Gelato</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_213406_351.mp4"></video>
-<div class="price">Rainbow Sherbert</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
-<div class="card">
-<video controls src="VID_20260218_213406_770.mp4"></video>
-<div class="price">Fortune Cookie</div>
-<div class="buy" onclick="order()">Commander</div>
-</div>
-
+<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
 </div>
 
 <!-- SPAIN -->
 <div id="spain" class="section">
-<div class="back" onclick="goBack()">⬅ Retour</div>
-Spain bientôt disponible
+<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+Spain soon
 </div>
 
 <!-- PROMO -->
 <div id="promo" class="section">
-<div class="back" onclick="goBack()">⬅ Retour</div>
-🔥 Promotions bientôt
+<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+Promo soon
+</div>
+
+<!-- LANG -->
+<div class="lang">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('it')">IT</button>
+<button onclick="setLang('en')">EN</button>
 </div>
 
 <script>
@@ -218,6 +164,20 @@ document.getElementById("home").style.display="block";
 
 function order(){
 window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
+}
+
+/* traduction */
+const t={
+fr:{hash:"Hash",cali:"Cali",spain:"Spain",promo:"Promotion",pay:"Paiement",back:"Retour",order:"Commander"},
+it:{hash:"Hash",cali:"Cali",spain:"Spagna",promo:"Promozioni",pay:"Pagamento",back:"Indietro",order:"Ordina"},
+en:{hash:"Hash",cali:"Cali",spain:"Spain",promo:"Promotions",pay:"Payment",back:"Back",order:"Order"}
+}
+
+function setLang(l){
+document.querySelectorAll("[data]").forEach(e=>{
+let k=e.getAttribute("data");
+if(t[l][k]) e.innerText=t[l][k];
+});
 }
 </script>
 
