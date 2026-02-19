@@ -1,117 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Greedfarm</title>
 
 <style>
-body{margin:0;font-family:-apple-system;color:white;text-align:center;background:black}
-.bg{position:fixed;width:100%;height:100%;background:url("IMG_2044.jpeg") center/cover;filter:brightness(.35);z-index:-1}
 
-.logo{width:90px;border-radius:20px;margin-top:45px;box-shadow:0 0 20px #00ff88}
-h1{letter-spacing:3px;text-shadow:0 0 12px #00ff88}
-
-.btn{width:72%;margin:8px auto;padding:12px;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer}
-.hash{background:#16a34a}.cali{background:#14b8a6}.spain{background:#22c55e}.promo{background:#f59e0b}.pay{background:#ef4444}
-
-.page{display:none}
-video{width:94%;border-radius:14px;margin:12px 0}
-
-.order{
-background:#00ff88;
-color:black;
-padding:8px 16px;
-border-radius:10px;
-font-weight:600;
-display:inline-block;
-margin-bottom:18px;
+body{
+margin:0;
+font-family:Arial;
+background:url("IMG_2044.jpeg") center/cover fixed;
+color:white;
+text-align:center;
 }
 
-.back{margin:15px;font-size:18px}
+.overlay{
+background:rgba(0,0,0,0.65);
+min-height:100vh;
+padding:20px;
+}
 
-.lang{position:fixed;right:10px;bottom:15px;display:flex;flex-direction:column;gap:6px}
-.lang div{background:#222;padding:6px 10px;border-radius:8px;font-size:12px}
+.logo{
+width:95px;
+border-radius:22px;
+box-shadow:0 0 18px #00ff88;
+margin-top:20px;
+}
+
+h1{
+letter-spacing:3px;
+text-shadow:0 0 14px #00ff88;
+}
+
+.btn{
+display:block;
+margin:12px auto;
+padding:14px;
+width:85%;
+border-radius:14px;
+font-weight:bold;
+font-size:17px;
+text-decoration:none;
+color:white;
+}
+
+.green{background:#1faa55;}
+.cali{background:#24b3a7;}
+.orange{background:#f59e0b;}
+.red{background:#ff3b3b;}
+
+.videoBox{
+background:rgba(255,255,255,0.06);
+margin:12px;
+padding:10px;
+border-radius:12px;
+}
+
+video{
+width:100%;
+border-radius:10px;
+}
+
+.order{
+display:block;
+background:#1faa55;
+margin-top:8px;
+padding:8px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.lang{
+position:fixed;
+bottom:18px;
+right:14px;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.lang button{
+background:black;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:10px;
+box-shadow:0 0 8px white;
+font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<div class="overlay">
 
-<div id="home">
-<img class="logo" src="IMG_2044.jpeg">
+<img src="IMG_2044.jpeg" class="logo">
 <h1>GREEDFARM</h1>
 
-<div class="btn hash" onclick="openPage('hash')">🍫 Hash</div>
-<div class="btn cali" onclick="openPage('cali')">🇺🇸 Cali</div>
-<div class="btn spain" onclick="openPage('spain')">🇪🇸 Spain</div>
-<div class="btn promo">🔥 Promotion</div>
-
-<a href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">
-<div class="btn pay">💳 Paiement</div>
-</a>
-</div>
+<a class="btn green" href="#hash">🍫 Hash</a>
+<a class="btn cali" href="#cali">🇺🇸 Cali</a>
+<a class="btn green" href="#spain">🇪🇸 Spain</a>
+<a class="btn orange" href="#">🔥 Promotion</a>
+<a class="btn red" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">💳 Payment</a>
 
 <!-- HASH -->
-<div id="hash" class="page">
-<div class="back" onclick="goHome()">⬅ Retour</div>
+<h2 id="hash">Hash</h2>
 
+<div class="videoBox">
 <video controls src="VID_20260129_020719_108.mp4"></video>
+<p>Static Mountain Giants — 100g 1200€</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
+</div>
 
-<video controls src="VID_20260212_024354_063.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
-<video controls src="VID_20260218_211142_496.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
-<video controls src="VID_20260218_212432_315.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
-<video controls src="VID_20260218_213406_222.mov"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
+<div class="videoBox">
 <video controls src="telegram_video.mp4"></video>
+<p>Dry Work — 100g 450€</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
 <!-- CALI -->
-<div id="cali" class="page">
-<div class="back" onclick="goHome()">⬅ Retour</div>
+<h2 id="cali">Cali</h2>
 
-<video controls src="VID_20260218_212243_412.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
+<div class="videoBox">
 <video controls src="VID_20260218_213405_917.mp4"></video>
+<p>Super Runtz — 100g 750€</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
+</div>
 
-<video controls src="VID_20260218_213406_052.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
-<video controls src="VID_20260218_213406_351.mp4"></video>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-
+<div class="videoBox">
 <video controls src="VID_20260218_213406_770.mp4"></video>
+<p>Fortune Cookie — 100g 575€</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
+</div>
+
 </div>
 
 <div class="lang">
-<div>FR</div>
-<div>IT</div>
-<div>EN</div>
+<button>FR</button>
+<button>IT</button>
+<button>EN</button>
 </div>
-
-<script>
-function openPage(id){
-document.getElementById("home").style.display="none";
-document.getElementById(id).style.display="block";
-}
-function goHome(){
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-document.getElementById("home").style.display="block";
-}
-</script>
 
 </body>
 </html>
