@@ -7,10 +7,10 @@
 <style>
 body{
 margin:0;
-font-family:Arial;
-background:black;
+font-family:-apple-system,BlinkMacSystemFont;
 color:white;
 text-align:center;
+background:black;
 }
 
 .bg{
@@ -18,79 +18,66 @@ position:fixed;
 width:100%;
 height:100%;
 background:url("IMG_2044.jpeg") center/cover;
-filter:brightness(0.35);
+filter:brightness(.35);
 z-index:-1;
 }
 
+/* logo */
 .logo{
-margin-top:40px;
-width:120px;
-border-radius:20px;
-box-shadow:0 0 20px #00ff88;
+width:95px;
+border-radius:18px;
+margin-top:35px;
+box-shadow:0 0 18px #00ff88;
 }
 
-.title{
-font-size:36px;
-margin:10px 0 40px;
-text-shadow:0 0 15px #00ff88;
+h1{
+margin:8px 0 28px;
+letter-spacing:2px;
+font-weight:700;
 }
 
+/* boutons */
 .btn{
-width:85%;
-margin:14px auto;
-padding:18px;
-border-radius:14px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.green{background:#16a34a;}
-.cali{background:#14b8a6;}
-.orange{background:#f59e0b;}
-.red{background:#ef4444;}
-
-.section{display:none;}
-
-.card{
-background:#111;
-margin:18px;
-padding:12px;
+width:78%;
+margin:10px auto;
+padding:14px;
 border-radius:12px;
-}
-
-video{width:100%;border-radius:10px;}
-
-.buy{
-background:#22c55e;
-margin-top:10px;
-padding:12px;
-border-radius:10px;
-}
-
-.back{
-margin:20px;
 font-size:18px;
+font-weight:600;
 cursor:pointer;
 }
 
-/* langue */
+.hash{background:#16a34a;}
+.cali{background:#0ea5a4;}
+.spain{background:#16a34a;}
+.promo{background:#f59e0b;}
+.pay{background:#ef4444;}
+
+.section{display:none;padding:20px;}
+video{width:92%;border-radius:12px;margin:10px 0;}
+
+/* langues */
 .lang{
 position:fixed;
-bottom:20px;
-right:15px;
+bottom:18px;
+right:12px;
 display:flex;
 flex-direction:column;
 gap:6px;
 }
 
 .lang button{
-background:#222;
-color:white;
 border:none;
-padding:8px 10px;
+padding:6px 10px;
 border-radius:8px;
+font-weight:700;
+color:white;
+cursor:pointer;
 }
+
+.fr{background:#2563eb;}
+.it{background:#16a34a;}
+.en{background:#ef4444;}
 </style>
 </head>
 
@@ -98,104 +85,99 @@ border-radius:8px;
 
 <div class="bg"></div>
 
-<!-- HOME -->
 <div id="home">
-
 <img src="IMG_2044.jpeg" class="logo">
-<div class="title">GREEDFARM</div>
+<h1 id="title">GREEDFARM</h1>
 
-<div class="btn green" onclick="openCat('hash')" id="hashTxt">🧱 Hash</div>
-<div class="btn cali" onclick="openCat('cali')" id="caliTxt">🇺🇸 Cali</div>
-<div class="btn green" onclick="openCat('spain')" id="spainTxt">🇪🇸 Spain</div>
-<div class="btn orange" onclick="openCat('promo')" id="promoTxt">🔥 Promotion</div>
-
-<div class="btn red" onclick="pay()" id="payTxt">💳 Paiement</div>
-
+<div class="btn hash" onclick="openCat('hash')">🧱 Hash</div>
+<div class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</div>
+<div class="btn spain" onclick="openCat('spain')">🇪🇸 Spain</div>
+<div class="btn promo" onclick="openCat('promo')">🔥 Promotion</div>
+<div class="btn pay" onclick="window.open('https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I')">💳 Payment</div>
 </div>
 
 <!-- HASH -->
 <div id="hash" class="section">
-<div class="back" onclick="goBack()" id="back1">⬅ Retour</div>
+<h2>Hash</h2>
 
-<div class="card">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<div class="buy" onclick="order()" id="order1">Commander</div>
-</div>
+<p>Static Mountain Giants</p>
 
+<video controls src="VID_20260212_024354_063.mp4"></video>
+<p>Hidden Farm Frozen Fruitella</p>
+
+<video controls src="VID_20260218_211142_496.mp4"></video>
+<p>Mountain Giants Premium</p>
+
+<video controls src="VID_20260218_212432_315.mp4"></video>
+<p>Dry Work</p>
+
+<video controls src="VID_20260218_213406_222.mov"></video>
+
+<video controls src="telegram_video.mp4"></video>
+
+<div class="btn hash" onclick="back()">⬅ Back</div>
 </div>
 
 <!-- CALI -->
 <div id="cali" class="section">
-<div class="back" onclick="goBack()" id="back2">⬅ Retour</div>
+<h2>Cali</h2>
+
+<video controls src="VID_20260218_212243_412.mp4"></video>
+<p>Wedding Cake</p>
+
+<video controls src="VID_20260218_213405_917.mp4"></video>
+<p>Super Runtz</p>
+
+<video controls src="VID_20260218_213406_052.mp4"></video>
+<p>Sherbert Gelato</p>
+
+<video controls src="VID_20260218_213406_351.mp4"></video>
+<p>Rainbow Sherbert</p>
+
+<video controls src="VID_20260218_213406_770.mp4"></video>
+<p>Fortune Cookie</p>
+
+<div class="btn cali" onclick="back()">⬅ Back</div>
 </div>
 
-<div id="spain" class="section">
-<div class="back" onclick="goBack()" id="back3">⬅ Retour</div>
-Spain soon
-</div>
-
+<!-- PROMO -->
 <div id="promo" class="section">
-<div class="back" onclick="goBack()" id="back4">⬅ Retour</div>
-Promo soon
+<h2>Promotion</h2>
+<p>Coming soon</p>
+<div class="btn promo" onclick="back()">⬅ Back</div>
 </div>
 
-<!-- LANG -->
+<!-- SPAIN -->
+<div id="spain" class="section">
+<h2>Spain</h2>
+<p>Coming soon</p>
+<div class="btn spain" onclick="back()">⬅ Back</div>
+</div>
+
+<!-- langues -->
 <div class="lang">
-<button onclick="langFR()">FR</button>
-<button onclick="langIT()">IT</button>
-<button onclick="langEN()">EN</button>
+<button class="fr" onclick="lang('fr')">FR</button>
+<button class="it" onclick="lang('it')">IT</button>
+<button class="en" onclick="lang('en')">EN</button>
 </div>
 
 <script>
-
 function openCat(id){
-document.getElementById("home").style.display="none";
-document.querySelectorAll(".section").forEach(s=>s.style.display="none");
-document.getElementById(id).style.display="block";
+document.getElementById('home').style.display='none';
+document.getElementById(id).style.display='block';
 }
 
-function goBack(){
-document.querySelectorAll(".section").forEach(s=>s.style.display="none");
-document.getElementById("home").style.display="block";
+function back(){
+document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+document.getElementById('home').style.display='block';
 }
 
-function pay(){
-window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
+function lang(l){
+if(l=="fr") title.innerText="GREEDFARM";
+if(l=="it") title.innerText="GREEDFARM SHOP";
+if(l=="en") title.innerText="GREEDFARM STORE";
 }
-
-function order(){pay();}
-
-/* langues simples */
-function langFR(){
-hashTxt.innerText="🧱 Hash";
-caliTxt.innerText="🇺🇸 Cali";
-spainTxt.innerText="🇪🇸 Spain";
-promoTxt.innerText="🔥 Promotion";
-payTxt.innerText="💳 Paiement";
-order1.innerText="Commander";
-back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Retour";
-}
-
-function langIT(){
-hashTxt.innerText="🧱 Hash";
-caliTxt.innerText="🇺🇸 Cali";
-spainTxt.innerText="🇪🇸 Spagna";
-promoTxt.innerText="🔥 Promozioni";
-payTxt.innerText="💳 Pagamento";
-order1.innerText="Ordina";
-back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Indietro";
-}
-
-function langEN(){
-hashTxt.innerText="🧱 Hash";
-caliTxt.innerText="🇺🇸 Cali";
-spainTxt.innerText="🇪🇸 Spain";
-promoTxt.innerText="🔥 Promotions";
-payTxt.innerText="💳 Payment";
-order1.innerText="Order";
-back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Back";
-}
-
 </script>
 
 </body>
