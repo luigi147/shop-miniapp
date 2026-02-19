@@ -27,11 +27,6 @@ box-shadow:0 0 15px #00ff88;
 margin-top:15px;
 }
 
-h1{
-letter-spacing:3px;
-text-shadow:0 0 14px #00ff88;
-}
-
 .btn{
 display:block;
 margin:10px auto;
@@ -46,8 +41,9 @@ color:white;
 
 .green{background:#19a451;}
 .cali{background:#19b2a6;}
-.orange{background:#f59e0b;}
 .red{background:#ff3b3b;}
+
+.page{display:none;}
 
 .videoBox{
 background:rgba(255,255,255,0.05);
@@ -85,10 +81,7 @@ border:none;
 padding:7px 10px;
 border-radius:10px;
 box-shadow:0 0 8px white;
-font-weight:bold;
 }
-
-.page{display:none;}
 
 </style>
 </head>
@@ -105,8 +98,6 @@ font-weight:bold;
 
 <button class="btn green" onclick="openPage('hash')">🍫 Hash</button>
 <button class="btn cali" onclick="openPage('cali')">🇺🇸 Cali</button>
-<button class="btn green" onclick="openPage('spain')">🇪🇸 Spain</button>
-<button class="btn orange">🔥 Promotion</button>
 
 <a href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">
 <button class="btn red">💳 Payment</button>
@@ -119,13 +110,6 @@ font-weight:bold;
 
 <div class="videoBox">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<p>Static Mountain Giants</p>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-</div>
-
-<div class="videoBox">
-<video controls src="telegram_video.mp4"></video>
-<p>Dry Work</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
@@ -138,13 +122,6 @@ font-weight:bold;
 
 <div class="videoBox">
 <video controls src="VID_20260218_213405_917.mp4"></video>
-<p>Super Runtz</p>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
-</div>
-
-<div class="videoBox">
-<video controls src="VID_20260218_213406_770.mp4"></video>
-<p>Fortune Cookie</p>
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
@@ -155,9 +132,9 @@ font-weight:bold;
 </div>
 
 <div class="lang">
-<button onclick="langClick()">FR</button>
-<button onclick="langClick()">IT</button>
-<button onclick="langClick()">EN</button>
+<button onclick="langEffect()">FR</button>
+<button onclick="langEffect()">IT</button>
+<button onclick="langEffect()">EN</button>
 </div>
 
 <script>
@@ -166,7 +143,6 @@ function openPage(id){
 document.getElementById("home").style.display="none";
 document.querySelectorAll(".page").forEach(p=>p.style.display="none");
 document.getElementById(id).style.display="block";
-window.scrollTo(0,0);
 }
 
 function goHome(){
@@ -174,9 +150,9 @@ document.querySelectorAll(".page").forEach(p=>p.style.display="none");
 document.getElementById("home").style.display="block";
 }
 
-function langClick(){
-document.body.style.boxShadow="inset 0 0 20px white";
-setTimeout(()=>{document.body.style.boxShadow="none"},300);
+function langEffect(){
+document.body.style.opacity="0.8";
+setTimeout(()=>{document.body.style.opacity="1"},150);
 }
 
 </script>
