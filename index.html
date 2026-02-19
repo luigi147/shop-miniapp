@@ -3,6 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <title>GreedFarm</title>
@@ -16,32 +21,37 @@ color:white;
 }
 
 .overlay{
-background:rgba(0,0,0,0.88);
+background:rgba(0,0,0,0.9);
 min-height:100vh;
 padding:20px;
 text-align:center;
 }
 
-.logo{
-width:120px;
+.logo img{
+width:130px;
 border-radius:20px;
-margin-top:20px;
+margin-top:30px;
 }
 
-.menu button{
-width:90%;
+.menu{
+margin-top:25px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.btn{
 padding:18px;
-margin-top:15px;
-border:none;
 border-radius:14px;
-background:#0FA958;
-color:white;
 font-size:18px;
+border:none;
+color:white;
 font-weight:bold;
 }
 
-.pay{background:#cc0000; box-shadow:0 0 12px red;}
-.promo{background:#ff9900; box-shadow:0 0 12px orange;}
+.green{background:#16a34a;}
+.promo{background:#f59e0b;}
+.pay{background:#dc2626;}
 
 .video{
 width:95%;
@@ -51,14 +61,14 @@ margin-top:15px;
 
 .price{
 margin-top:5px;
-color:#0FA958;
+color:#16a34a;
 font-weight:bold;
 }
 
 .back{
-background:#333;
-padding:15px;
 margin-top:25px;
+padding:15px;
+background:#333;
 border-radius:12px;
 }
 </style>
@@ -68,15 +78,18 @@ border-radius:12px;
 
 <div class="overlay">
 
-<img src="IMG_2044.jpeg" class="logo">
+<div class="logo">
+<img src="IMG_2044.jpeg">
 <h1>GREEDFARM</h1>
+</div>
 
+<!-- MENU -->
 <div id="menu" class="menu">
-<button onclick="openCat('hash')">🧱 Hash</button>
-<button onclick="openCat('cali')">🇺🇸 Cali</button>
-<button onclick="openCat('spain')">🇪🇸 Spain</button>
-<button class="promo" onclick="openCat('promo')">🔥 Promotion</button>
-<button class="pay" onclick="pay()">💳 Paiement</button>
+<button class="btn green" onclick="openCat('hash')">🧱 Hash</button>
+<button class="btn green" onclick="openCat('cali')">🇺🇸 Cali</button>
+<button class="btn green" onclick="openCat('spain')">🇪🇸 Spain</button>
+<button class="btn promo" onclick="openCat('promo')">🔥 Promotion</button>
+<button class="btn pay" onclick="pay()">💳 Paiement</button>
 </div>
 
 <!-- HASH -->
@@ -84,19 +97,19 @@ border-radius:12px;
 <h2>Hash</h2>
 
 <video class="video" controls src="VID_20260129_020719_108.mp4"></video>
-<div class="price">Dry work — 100g 450€</div>
+<div class="price">Dry Work — 100g 450€</div>
 
 <video class="video" controls src="VID_20260212_024354_063.mp4"></video>
-<div class="price">Mountain Giants Frozen — 100g 850€</div>
+<div class="price">Frozen Premium — 100g 850€</div>
 
 <video class="video" controls src="VID_20260218_211142_496.mp4"></video>
-<div class="price">Hidden Farm Frozen — 100g 1100€</div>
+<div class="price">Hidden Farm — 100g 1100€</div>
 
 <video class="video" controls src="VID_20260218_212432_315.mp4"></video>
-<div class="price">Static Mountain Giants — 100g 1200€</div>
+<div class="price">Static MG — 100g 1200€</div>
 
 <video class="video" controls src="telegram_video.mp4"></video>
-<div class="price">Premium Hash — Ask price</div>
+<div class="price">Premium Hash — Ask</div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
