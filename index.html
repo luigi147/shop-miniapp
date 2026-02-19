@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Greedfarm</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -58,10 +56,7 @@ padding:10px;
 border-radius:12px;
 }
 
-video{
-width:100%;
-border-radius:10px;
-}
+video{width:100%;border-radius:10px;}
 
 .order{
 display:block;
@@ -102,17 +97,22 @@ font-weight:bold;
 
 <div class="overlay">
 
+<!-- HOME -->
+<div id="home">
+
 <img src="IMG_2044.jpeg" class="logo">
 <h1>GREEDFARM</h1>
 
-<button class="btn green" onclick="show('hash')">🍫 Hash</button>
-<button class="btn cali" onclick="show('cali')">🇺🇸 Cali</button>
-<button class="btn green" onclick="show('spain')">🇪🇸 Spain</button>
+<button class="btn green" onclick="openPage('hash')">🍫 Hash</button>
+<button class="btn cali" onclick="openPage('cali')">🇺🇸 Cali</button>
+<button class="btn green" onclick="openPage('spain')">🇪🇸 Spain</button>
 <button class="btn orange">🔥 Promotion</button>
 
 <a href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">
 <button class="btn red">💳 Payment</button>
 </a>
+
+</div>
 
 <!-- HASH -->
 <div id="hash" class="page">
@@ -129,7 +129,7 @@ font-weight:bold;
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
-<button class="btn green" onclick="home()">⬅ Retour</button>
+<button class="btn green" onclick="goHome()">⬅ Retour</button>
 
 </div>
 
@@ -148,31 +148,35 @@ font-weight:bold;
 <a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a>
 </div>
 
-<button class="btn cali" onclick="home()">⬅ Retour</button>
+<button class="btn cali" onclick="goHome()">⬅ Retour</button>
 
 </div>
 
 </div>
 
 <div class="lang">
-<button onclick="setLang('fr')">FR</button>
-<button onclick="setLang('it')">IT</button>
-<button onclick="setLang('en')">EN</button>
+<button onclick="langClick()">FR</button>
+<button onclick="langClick()">IT</button>
+<button onclick="langClick()">EN</button>
 </div>
 
 <script>
 
-function show(id){
+function openPage(id){
+document.getElementById("home").style.display="none";
 document.querySelectorAll(".page").forEach(p=>p.style.display="none");
 document.getElementById(id).style.display="block";
+window.scrollTo(0,0);
 }
 
-function home(){
+function goHome(){
 document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+document.getElementById("home").style.display="block";
 }
 
-function setLang(l){
-alert("Langue : "+l);
+function langClick(){
+document.body.style.boxShadow="inset 0 0 20px white";
+setTimeout(()=>{document.body.style.boxShadow="none"},300);
 }
 
 </script>
