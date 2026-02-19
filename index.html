@@ -16,39 +16,50 @@ color:white;
 }
 
 .overlay{
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,0.88);
 min-height:100vh;
 padding:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+border-radius:20px;
+margin-top:20px;
 }
 
 .menu button{
-width:100%;
-padding:15px;
-margin-top:10px;
+width:90%;
+padding:18px;
+margin-top:15px;
 border:none;
-border-radius:12px;
-background:#00aa55;
+border-radius:14px;
+background:#0FA958;
 color:white;
-font-size:16px;
+font-size:18px;
+font-weight:bold;
 }
 
-.product{
-margin-top:20px;
-background:rgba(0,0,0,0.6);
-padding:15px;
+.pay{background:#cc0000; box-shadow:0 0 12px red;}
+.promo{background:#ff9900; box-shadow:0 0 12px orange;}
+
+.video{
+width:95%;
 border-radius:12px;
+margin-top:15px;
 }
 
-video{width:100%;border-radius:10px;}
-
-.price{color:#7CFF9B;margin-top:8px;font-size:14px;}
+.price{
+margin-top:5px;
+color:#0FA958;
+font-weight:bold;
+}
 
 .back{
 background:#333;
-padding:12px;
-margin-top:20px;
-border-radius:10px;
-text-align:center;
+padding:15px;
+margin-top:25px;
+border-radius:12px;
 }
 </style>
 </head>
@@ -57,87 +68,74 @@ text-align:center;
 
 <div class="overlay">
 
+<img src="IMG_2044.jpeg" class="logo">
 <h1>GREEDFARM</h1>
 
 <div id="menu" class="menu">
 <button onclick="openCat('hash')">🧱 Hash</button>
 <button onclick="openCat('cali')">🇺🇸 Cali</button>
+<button onclick="openCat('spain')">🇪🇸 Spain</button>
+<button class="promo" onclick="openCat('promo')">🔥 Promotion</button>
+<button class="pay" onclick="pay()">💳 Paiement</button>
 </div>
 
 <!-- HASH -->
 <div id="hash" style="display:none">
+<h2>Hash</h2>
 
-<div class="product">
-<h3>Static Mountain Giants</h3>
-<video controls><source src="VID_20260129_020719_108.mp4"></video>
-<div class="price">100g 1200€<br>500g 5500€<br>1kg 10500€</div>
-</div>
+<video class="video" controls src="VID_20260129_020719_108.mp4"></video>
+<div class="price">Dry work — 100g 450€</div>
 
-<div class="product">
-<h3>Frozen Fruitella</h3>
-<video controls><source src="VID_20260212_024354_063.mp4"></video>
-<div class="price">100g 1100€<br>500g 4750€<br>1kg 8500€</div>
-</div>
+<video class="video" controls src="VID_20260212_024354_063.mp4"></video>
+<div class="price">Mountain Giants Frozen — 100g 850€</div>
 
-<div class="product">
-<h3>Premium Frozen</h3>
-<video controls><source src="VID_20260218_211142_496.mp4"></video>
-<div class="price">100g 850€<br>500g 3750€<br>1kg 7300€</div>
-</div>
+<video class="video" controls src="VID_20260218_211142_496.mp4"></video>
+<div class="price">Hidden Farm Frozen — 100g 1100€</div>
 
-<div class="product">
-<h3>Dry Work</h3>
-<video controls><source src="VID_20260218_212432_315.mp4"></video>
-<div class="price">100g 450€<br>500g 1750€<br>1kg 2850€</div>
-</div>
+<video class="video" controls src="VID_20260218_212432_315.mp4"></video>
+<div class="price">Static Mountain Giants — 100g 1200€</div>
 
-<div class="product">
-<h3>Hash Extra</h3>
-<video controls><source src="VID_20260218_213406_222.mov"></video>
-</div>
-
-<div class="product">
-<h3>Hash Promo</h3>
-<video controls><source src="telegram_video.mp4"></video>
-</div>
+<video class="video" controls src="telegram_video.mp4"></video>
+<div class="price">Premium Hash — Ask price</div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
 <!-- CALI -->
 <div id="cali" style="display:none">
+<h2>Cali</h2>
 
-<div class="product">
-<h3>Wedding Cake</h3>
-<video controls><source src="VID_20260218_212243_412.mp4"></video>
-</div>
+<video class="video" controls src="VID_20260218_212243_412.mp4"></video>
+<div class="price">Wedding Cake — 100g 575€</div>
 
-<div class="product">
-<h3>Super Runtz</h3>
-<video controls><source src="VID_20260218_213405_917.mp4"></video>
-<div class="price">100g 750€<br>250g 1650€<br>500g 3000€</div>
-</div>
+<video class="video" controls src="VID_20260218_213405_917.mp4"></video>
+<div class="price">Super Runtz — 100g 750€</div>
 
-<div class="product">
-<h3>Sherbert Gelato</h3>
-<video controls><source src="VID_20260218_213406_052.mp4"></video>
-</div>
+<video class="video" controls src="VID_20260218_213406_052.mp4"></video>
+<div class="price">Sherbert Gelato — 100g 750€</div>
 
-<div class="product">
-<h3>Rainbow Sherbert</h3>
-<video controls><source src="VID_20260218_213406_351.mp4"></video>
-</div>
+<video class="video" controls src="VID_20260218_213406_351.mp4"></video>
+<div class="price">Rainbow Sherbert — 100g 750€</div>
 
-<div class="product">
-<h3>Fortune Cookie</h3>
-<video controls><source src="VID_20260218_213406_770.mp4"></video>
-<div class="price">100g 575€<br>250g 1300€<br>500g 2250€</div>
-</div>
+<video class="video" controls src="VID_20260218_213406_770.mp4"></video>
+<div class="price">Fortune Cookie — 100g 575€</div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
-<div class="menu button" onclick="pay()">💳 Paiement sécurisé</div>
+<!-- SPAIN -->
+<div id="spain" style="display:none">
+<h2>Spain</h2>
+<p>Coming soon</p>
+<div class="back" onclick="back()">⬅ Retour</div>
+</div>
+
+<!-- PROMO -->
+<div id="promo" style="display:none">
+<h2>🔥 Promotions</h2>
+<p>Deals soon</p>
+<div class="back" onclick="back()">⬅ Retour</div>
+</div>
 
 </div>
 
@@ -153,6 +151,8 @@ function back(){
 document.getElementById('menu').style.display='block';
 document.getElementById('hash').style.display='none';
 document.getElementById('cali').style.display='none';
+document.getElementById('spain').style.display='none';
+document.getElementById('promo').style.display='none';
 }
 
 function pay(){
