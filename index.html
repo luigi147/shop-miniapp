@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GreedFarm</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Greedfarm</title>
 
 <style>
 body{
@@ -13,6 +14,7 @@ text-align:center;
 background:black;
 }
 
+/* BACKGROUND */
 .bg{
 position:fixed;
 width:100%;
@@ -22,62 +24,62 @@ filter:brightness(.35);
 z-index:-1;
 }
 
-/* logo */
+/* LOGO */
 .logo{
-width:95px;
-border-radius:18px;
-margin-top:35px;
+width:90px;
+border-radius:20px;
+margin-top:45px;
 box-shadow:0 0 18px #00ff88;
 }
 
 h1{
-margin:8px 0 28px;
+margin:12px 0 35px;
 letter-spacing:2px;
-font-weight:700;
+text-shadow:0 0 10px #00ff88;
 }
 
-/* boutons */
+/* MENU BUTTONS */
 .btn{
-width:78%;
-margin:10px auto;
-padding:14px;
-border-radius:12px;
-font-size:18px;
+width:72%;
+margin:9px auto;
+padding:13px;
+border-radius:14px;
+font-size:17px;
 font-weight:600;
 cursor:pointer;
+transition:.2s;
 }
+.btn:active{transform:scale(.97);}
 
 .hash{background:#16a34a;}
-.cali{background:#0ea5a4;}
-.spain{background:#16a34a;}
+.cali{background:#14b8a6;}
+.spain{background:#22c55e;}
 .promo{background:#f59e0b;}
 .pay{background:#ef4444;}
 
 .section{display:none;padding:20px;}
-video{width:92%;border-radius:12px;margin:10px 0;}
+video{width:95%;border-radius:12px;margin:12px 0;}
 
-/* langues */
+/* LANGUE */
 .lang{
 position:fixed;
-bottom:18px;
 right:12px;
+bottom:18px;
 display:flex;
 flex-direction:column;
 gap:6px;
 }
 
-.lang button{
-border:none;
+.lang div{
+background:#111;
 padding:6px 10px;
 border-radius:8px;
-font-weight:700;
-color:white;
+font-size:12px;
 cursor:pointer;
+opacity:.8;
 }
 
-.fr{background:#2563eb;}
-.it{background:#16a34a;}
-.en{background:#ef4444;}
+.lang div:active{transform:scale(.9);}
 </style>
 </head>
 
@@ -85,15 +87,16 @@ cursor:pointer;
 
 <div class="bg"></div>
 
+<!-- HOME -->
 <div id="home">
 <img src="IMG_2044.jpeg" class="logo">
-<h1 id="title">GREEDFARM</h1>
+<h1>GREEDFARM</h1>
 
-<div class="btn hash" onclick="openCat('hash')">🧱 Hash</div>
-<div class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</div>
-<div class="btn spain" onclick="openCat('spain')">🇪🇸 Spain</div>
-<div class="btn promo" onclick="openCat('promo')">🔥 Promotion</div>
-<div class="btn pay" onclick="window.open('https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I')">💳 Payment</div>
+<div class="btn hash" onclick="openSection('hash')">🧱 Hash</div>
+<div class="btn cali" onclick="openSection('cali')">🇺🇸 Cali</div>
+<div class="btn spain" onclick="openSection('spain')">🇪🇸 Spain</div>
+<div class="btn promo" onclick="openSection('promo')">🔥 Promotion</div>
+<div class="btn pay" onclick="window.open('https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I')">💳 Paiement</div>
 </div>
 
 <!-- HASH -->
@@ -107,16 +110,14 @@ cursor:pointer;
 <p>Hidden Farm Frozen Fruitella</p>
 
 <video controls src="VID_20260218_211142_496.mp4"></video>
-<p>Mountain Giants Premium</p>
 
 <video controls src="VID_20260218_212432_315.mp4"></video>
-<p>Dry Work</p>
 
 <video controls src="VID_20260218_213406_222.mov"></video>
 
 <video controls src="telegram_video.mp4"></video>
 
-<div class="btn hash" onclick="back()">⬅ Back</div>
+<div class="btn hash" onclick="goBack()">⬅ Retour</div>
 </div>
 
 <!-- CALI -->
@@ -138,45 +139,49 @@ cursor:pointer;
 <video controls src="VID_20260218_213406_770.mp4"></video>
 <p>Fortune Cookie</p>
 
-<div class="btn cali" onclick="back()">⬅ Back</div>
-</div>
-
-<!-- PROMO -->
-<div id="promo" class="section">
-<h2>Promotion</h2>
-<p>Coming soon</p>
-<div class="btn promo" onclick="back()">⬅ Back</div>
+<div class="btn cali" onclick="goBack()">⬅ Retour</div>
 </div>
 
 <!-- SPAIN -->
 <div id="spain" class="section">
 <h2>Spain</h2>
-<p>Coming soon</p>
-<div class="btn spain" onclick="back()">⬅ Back</div>
+<p>Bientôt disponible</p>
+<div class="btn spain" onclick="goBack()">⬅ Retour</div>
 </div>
 
-<!-- langues -->
+<!-- PROMO -->
+<div id="promo" class="section">
+<h2>Promotion</h2>
+<p>Arrivages & deals bientôt</p>
+<div class="btn promo" onclick="goBack()">⬅ Retour</div>
+</div>
+
+<!-- LANG -->
 <div class="lang">
-<button class="fr" onclick="lang('fr')">FR</button>
-<button class="it" onclick="lang('it')">IT</button>
-<button class="en" onclick="lang('en')">EN</button>
+<div onclick="setLang('fr')">FR</div>
+<div onclick="setLang('it')">IT</div>
+<div onclick="setLang('en')">EN</div>
 </div>
 
 <script>
-function openCat(id){
-document.getElementById('home').style.display='none';
-document.getElementById(id).style.display='block';
+function openSection(id){
+document.getElementById("home").style.display="none";
+document.getElementById(id).style.display="block";
 }
 
-function back(){
-document.querySelectorAll('.section').forEach(s=>s.style.display='none');
-document.getElementById('home').style.display='block';
+function goBack(){
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+document.getElementById("home").style.display="block";
 }
 
-function lang(l){
-if(l=="fr") title.innerText="GREEDFARM";
-if(l=="it") title.innerText="GREEDFARM SHOP";
-if(l=="en") title.innerText="GREEDFARM STORE";
+/* LANGUE SIMPLE */
+function setLang(l){
+if(l==="it"){
+alert("Version IT bientôt 🔥");
+}
+if(l==="en"){
+alert("English soon 🔥");
+}
 }
 </script>
 
