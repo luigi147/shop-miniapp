@@ -8,7 +8,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#000;
+background:black;
 color:white;
 text-align:center;
 }
@@ -25,14 +25,14 @@ z-index:-1;
 .logo{
 margin-top:40px;
 width:120px;
-border-radius:25px;
-box-shadow:0 0 25px #00ff88;
+border-radius:20px;
+box-shadow:0 0 20px #00ff88;
 }
 
 .title{
-font-size:38px;
+font-size:36px;
 margin:10px 0 40px;
-text-shadow:0 0 18px #00ff88;
+text-shadow:0 0 15px #00ff88;
 }
 
 .btn{
@@ -50,9 +50,7 @@ cursor:pointer;
 .orange{background:#f59e0b;}
 .red{background:#ef4444;}
 
-.section{display:none;padding-bottom:40px;}
-
-.back{margin:20px;font-size:18px;cursor:pointer;}
+.section{display:none;}
 
 .card{
 background:#111;
@@ -63,17 +61,20 @@ border-radius:12px;
 
 video{width:100%;border-radius:10px;}
 
-.price{margin-top:8px;font-size:17px;}
-
 .buy{
 background:#22c55e;
 margin-top:10px;
 padding:12px;
 border-radius:10px;
-font-weight:bold;
 }
 
-/* bouton langue */
+.back{
+margin:20px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* langue */
 .lang{
 position:fixed;
 bottom:20px;
@@ -89,7 +90,6 @@ color:white;
 border:none;
 padding:8px 10px;
 border-radius:8px;
-font-size:12px;
 }
 </style>
 </head>
@@ -99,60 +99,57 @@ font-size:12px;
 <div class="bg"></div>
 
 <!-- HOME -->
-<div id="home" class="section" style="display:block">
+<div id="home">
 
 <img src="IMG_2044.jpeg" class="logo">
 <div class="title">GREEDFARM</div>
 
-<div class="btn green" data="hash" onclick="openCat('hash')">🧱 Hash</div>
-<div class="btn cali" data="cali" onclick="openCat('cali')">🇺🇸 Cali</div>
-<div class="btn green" data="spain" onclick="openCat('spain')">🇪🇸 Spain</div>
-<div class="btn orange" data="promo" onclick="openCat('promo')">🔥 Promotion</div>
+<div class="btn green" onclick="openCat('hash')" id="hashTxt">🧱 Hash</div>
+<div class="btn cali" onclick="openCat('cali')" id="caliTxt">🇺🇸 Cali</div>
+<div class="btn green" onclick="openCat('spain')" id="spainTxt">🇪🇸 Spain</div>
+<div class="btn orange" onclick="openCat('promo')" id="promoTxt">🔥 Promotion</div>
 
-<div class="btn red" data="pay"
-onclick="window.location.href='https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I'">
-💳 Paiement
-</div>
+<div class="btn red" onclick="pay()" id="payTxt">💳 Paiement</div>
 
 </div>
 
 <!-- HASH -->
 <div id="hash" class="section">
-<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+<div class="back" onclick="goBack()" id="back1">⬅ Retour</div>
 
 <div class="card">
 <video controls src="VID_20260129_020719_108.mp4"></video>
-<div class="buy" onclick="order()" data="order">Commander</div>
+<div class="buy" onclick="order()" id="order1">Commander</div>
 </div>
 
 </div>
 
 <!-- CALI -->
 <div id="cali" class="section">
-<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+<div class="back" onclick="goBack()" id="back2">⬅ Retour</div>
 </div>
 
-<!-- SPAIN -->
 <div id="spain" class="section">
-<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+<div class="back" onclick="goBack()" id="back3">⬅ Retour</div>
 Spain soon
 </div>
 
-<!-- PROMO -->
 <div id="promo" class="section">
-<div class="back" onclick="goBack()" data="back">⬅ Retour</div>
+<div class="back" onclick="goBack()" id="back4">⬅ Retour</div>
 Promo soon
 </div>
 
 <!-- LANG -->
 <div class="lang">
-<button onclick="setLang('fr')">FR</button>
-<button onclick="setLang('it')">IT</button>
-<button onclick="setLang('en')">EN</button>
+<button onclick="langFR()">FR</button>
+<button onclick="langIT()">IT</button>
+<button onclick="langEN()">EN</button>
 </div>
 
 <script>
+
 function openCat(id){
+document.getElementById("home").style.display="none";
 document.querySelectorAll(".section").forEach(s=>s.style.display="none");
 document.getElementById(id).style.display="block";
 }
@@ -162,23 +159,43 @@ document.querySelectorAll(".section").forEach(s=>s.style.display="none");
 document.getElementById("home").style.display="block";
 }
 
-function order(){
+function pay(){
 window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
 }
 
-/* traduction */
-const t={
-fr:{hash:"Hash",cali:"Cali",spain:"Spain",promo:"Promotion",pay:"Paiement",back:"Retour",order:"Commander"},
-it:{hash:"Hash",cali:"Cali",spain:"Spagna",promo:"Promozioni",pay:"Pagamento",back:"Indietro",order:"Ordina"},
-en:{hash:"Hash",cali:"Cali",spain:"Spain",promo:"Promotions",pay:"Payment",back:"Back",order:"Order"}
+function order(){pay();}
+
+/* langues simples */
+function langFR(){
+hashTxt.innerText="🧱 Hash";
+caliTxt.innerText="🇺🇸 Cali";
+spainTxt.innerText="🇪🇸 Spain";
+promoTxt.innerText="🔥 Promotion";
+payTxt.innerText="💳 Paiement";
+order1.innerText="Commander";
+back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Retour";
 }
 
-function setLang(l){
-document.querySelectorAll("[data]").forEach(e=>{
-let k=e.getAttribute("data");
-if(t[l][k]) e.innerText=t[l][k];
-});
+function langIT(){
+hashTxt.innerText="🧱 Hash";
+caliTxt.innerText="🇺🇸 Cali";
+spainTxt.innerText="🇪🇸 Spagna";
+promoTxt.innerText="🔥 Promozioni";
+payTxt.innerText="💳 Pagamento";
+order1.innerText="Ordina";
+back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Indietro";
 }
+
+function langEN(){
+hashTxt.innerText="🧱 Hash";
+caliTxt.innerText="🇺🇸 Cali";
+spainTxt.innerText="🇪🇸 Spain";
+promoTxt.innerText="🔥 Promotions";
+payTxt.innerText="💳 Payment";
+order1.innerText="Order";
+back1.innerText=back2.innerText=back3.innerText=back4.innerText="⬅ Back";
+}
+
 </script>
 
 </body>
