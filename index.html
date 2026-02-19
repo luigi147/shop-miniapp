@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <title>GreedFarm</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -21,7 +20,7 @@ color:white;
 }
 
 .overlay{
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.92);
 min-height:100vh;
 padding:20px;
 text-align:center;
@@ -29,8 +28,8 @@ text-align:center;
 
 .logo img{
 width:130px;
-border-radius:20px;
-margin-top:30px;
+border-radius:18px;
+margin-top:25px;
 }
 
 .menu{
@@ -40,28 +39,46 @@ flex-direction:column;
 gap:15px;
 }
 
-.btn{
+.card{
 padding:18px;
-border-radius:14px;
+border-radius:16px;
 font-size:18px;
+font-weight:bold;
 border:none;
 color:white;
-font-weight:bold;
+transition:0.2s;
 }
 
 .green{background:#16a34a;}
-.promo{background:#f59e0b;}
-.pay{background:#dc2626;}
+.orange{background:#f59e0b;}
+.red{background:#dc2626;}
 
-.video{
-width:95%;
+.card:active{transform:scale(0.96);}
+
+.product{
+margin-top:20px;
+background:rgba(255,255,255,0.06);
+padding:15px;
+border-radius:14px;
+}
+
+video{
+width:100%;
 border-radius:12px;
-margin-top:15px;
+margin-top:10px;
 }
 
 .price{
-margin-top:5px;
+margin-top:6px;
 color:#16a34a;
+font-weight:bold;
+}
+
+.buy{
+margin-top:10px;
+padding:10px;
+background:#16a34a;
+border-radius:10px;
 font-weight:bold;
 }
 
@@ -71,6 +88,7 @@ padding:15px;
 background:#333;
 border-radius:12px;
 }
+
 </style>
 </head>
 
@@ -85,74 +103,83 @@ border-radius:12px;
 
 <!-- MENU -->
 <div id="menu" class="menu">
-<button class="btn green" onclick="openCat('hash')">🧱 Hash</button>
-<button class="btn green" onclick="openCat('cali')">🇺🇸 Cali</button>
-<button class="btn green" onclick="openCat('spain')">🇪🇸 Spain</button>
-<button class="btn promo" onclick="openCat('promo')">🔥 Promotion</button>
-<button class="btn pay" onclick="pay()">💳 Paiement</button>
+<button class="card green" onclick="openCat('hash')">🧱 Hash</button>
+<button class="card green" onclick="openCat('cali')">🇺🇸 Cali</button>
+<button class="card green" onclick="openCat('spain')">🇪🇸 Spain</button>
+<button class="card orange" onclick="openCat('promo')">🔥 Promotions</button>
+<button class="card red" onclick="pay()">💳 Paiement</button>
 </div>
 
 <!-- HASH -->
 <div id="hash" style="display:none">
-<h2>Hash</h2>
 
-<video class="video" controls src="VID_20260129_020719_108.mp4"></video>
-<div class="price">Dry Work — 100g 450€</div>
+<div class="product">
+<h3>Dry Work</h3>
+<video controls src="VID_20260129_020719_108.mp4"></video>
+<div class="price">100g 450€</div>
+<div class="buy" onclick="order('Dry Work')">Commander</div>
+</div>
 
-<video class="video" controls src="VID_20260212_024354_063.mp4"></video>
-<div class="price">Frozen Premium — 100g 850€</div>
+<div class="product">
+<h3>Frozen Premium</h3>
+<video controls src="VID_20260212_024354_063.mp4"></video>
+<div class="price">100g 850€</div>
+<div class="buy" onclick="order('Frozen Premium')">Commander</div>
+</div>
 
-<video class="video" controls src="VID_20260218_211142_496.mp4"></video>
-<div class="price">Hidden Farm — 100g 1100€</div>
-
-<video class="video" controls src="VID_20260218_212432_315.mp4"></video>
-<div class="price">Static MG — 100g 1200€</div>
-
-<video class="video" controls src="telegram_video.mp4"></video>
-<div class="price">Premium Hash — Ask</div>
+<div class="product">
+<h3>Static Mountain Giants</h3>
+<video controls src="VID_20260218_212432_315.mp4"></video>
+<div class="price">100g 1200€</div>
+<div class="buy" onclick="order('Static MG')">Commander</div>
+</div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
 <!-- CALI -->
 <div id="cali" style="display:none">
-<h2>Cali</h2>
 
-<video class="video" controls src="VID_20260218_212243_412.mp4"></video>
-<div class="price">Wedding Cake — 100g 575€</div>
+<div class="product">
+<h3>Wedding Cake</h3>
+<video controls src="VID_20260218_212243_412.mp4"></video>
+<div class="price">100g 575€</div>
+<div class="buy" onclick="order('Wedding Cake')">Commander</div>
+</div>
 
-<video class="video" controls src="VID_20260218_213405_917.mp4"></video>
-<div class="price">Super Runtz — 100g 750€</div>
+<div class="product">
+<h3>Super Runtz</h3>
+<video controls src="VID_20260218_213405_917.mp4"></video>
+<div class="price">100g 750€</div>
+<div class="buy" onclick="order('Super Runtz')">Commander</div>
+</div>
 
-<video class="video" controls src="VID_20260218_213406_052.mp4"></video>
-<div class="price">Sherbert Gelato — 100g 750€</div>
-
-<video class="video" controls src="VID_20260218_213406_351.mp4"></video>
-<div class="price">Rainbow Sherbert — 100g 750€</div>
-
-<video class="video" controls src="VID_20260218_213406_770.mp4"></video>
-<div class="price">Fortune Cookie — 100g 575€</div>
+<div class="product">
+<h3>Fortune Cookie</h3>
+<video controls src="VID_20260218_213406_770.mp4"></video>
+<div class="price">100g 575€</div>
+<div class="buy" onclick="order('Fortune Cookie')">Commander</div>
+</div>
 
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
 <!-- SPAIN -->
 <div id="spain" style="display:none">
-<h2>Spain</h2>
-<p>Coming soon</p>
+<h2>Spain soon</h2>
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
 <!-- PROMO -->
 <div id="promo" style="display:none">
-<h2>🔥 Promotions</h2>
-<p>Deals soon</p>
+<h2>Promotions soon</h2>
 <div class="back" onclick="back()">⬅ Retour</div>
 </div>
 
 </div>
 
 <script>
+
 Telegram.WebApp.ready();
 
 function openCat(cat){
@@ -162,15 +189,17 @@ document.getElementById(cat).style.display='block';
 
 function back(){
 document.getElementById('menu').style.display='block';
-document.getElementById('hash').style.display='none';
-document.getElementById('cali').style.display='none';
-document.getElementById('spain').style.display='none';
-document.getElementById('promo').style.display='none';
+['hash','cali','spain','promo'].forEach(x=>document.getElementById(x).style.display='none');
 }
 
 function pay(){
 window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I";
 }
+
+function order(product){
+window.location.href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I?text=Commande%20"+product;
+}
+
 </script>
 
 </body>
