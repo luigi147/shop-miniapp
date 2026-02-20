@@ -107,34 +107,36 @@ box-shadow:0 0 8px white;
 
 <!-- HASH -->
 <div id="hash" class="page">
-
 <div class="videoBox"><video controls src="VID_20260129_020719_108.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260212_024354_063.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_211142_496.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_212432_315.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_213406_222.mov"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="telegram_video.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-
 <button class="btn green" onclick="goHome()">⬅ Retour</button>
 </div>
 
 <!-- CALI -->
 <div id="cali" class="page">
-
 <div class="videoBox"><video controls src="VID_20260218_212243_412.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_213405_917.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_213406_052.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_213406_351.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
 <div class="videoBox"><video controls src="VID_20260218_213406_770.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-
 <button class="btn cali" onclick="goHome()">⬅ Retour</button>
 </div>
 
 <!-- SPAIN -->
-<div id="spain" class="page"><h2>Spain bientôt</h2><button class="btn green" onclick="goHome()">⬅ Retour</button></div>
+<div id="spain" class="page">
+<h2>Spain bientôt</h2>
+<button class="btn green" onclick="goHome()">⬅ Retour</button>
+</div>
 
 <!-- PROMO -->
-<div id="promo" class="page"><h2>Promo bientôt</h2><button class="btn orange" onclick="goHome()">⬅ Retour</button></div>
+<div id="promo" class="page">
+<h2>Promo bientôt</h2>
+<button class="btn orange" onclick="goHome()">⬅ Retour</button>
+</div>
 
 </div>
 
@@ -157,8 +159,8 @@ document.getElementById("home").style.display="block";
 }
 
 function langClick(){
-document.body.style.opacity="0.8";
-setTimeout(()=>document.body.style.opacity="1",150);
+document.body.style.filter="brightness(1.2)";
+setTimeout(()=>document.body.style.filter="brightness(1)",150);
 }
 </script>
 
