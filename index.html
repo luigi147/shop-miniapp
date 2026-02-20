@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greedfarm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GreedFarm</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial;
-background:url("IMG_2044.jpeg") center/cover fixed;
+background:#000;
 color:white;
 text-align:center;
+background-image:url("IMG_2044.jpeg");
+background-size:cover;
+background-position:center;
 }
 
 .overlay{
@@ -21,146 +25,146 @@ padding:20px;
 }
 
 .logo{
-width:90px;
+width:110px;
 border-radius:20px;
-box-shadow:0 0 15px #00ff88;
-margin-top:10px;
+margin-top:20px;
+box-shadow:0 0 20px #00ff88;
+}
+
+h1{
+letter-spacing:4px;
 }
 
 .btn{
 display:block;
-margin:10px auto;
-padding:13px;
-width:82%;
-border-radius:14px;
+margin:12px auto;
+width:80%;
+padding:16px;
+border-radius:16px;
+font-size:18px;
 font-weight:bold;
-font-size:17px;
-border:none;
+text-decoration:none;
 color:white;
 }
 
-.green{background:#19a451;}
-.cali{background:#19b2a6;}
-.orange{background:#f59e0b;}
-.red{background:#ff3b3b;}
+.hash{background:#1faa4b;}
+.cali{background:#19a7a3;}
+.spain{background:#1faa4b;}
+.promo{background:#f39c12;}
+.pay{background:#e53935;}
 
-.page{display:none;}
+.section{display:none;margin-top:20px;}
 
-.videoBox{
-background:rgba(255,255,255,0.05);
-margin:12px;
+.video{
+background:rgba(0,0,0,0.6);
 padding:10px;
+margin:15px;
 border-radius:12px;
 }
 
 video{width:100%;border-radius:10px;}
 
+.price{margin-top:8px;font-weight:bold;color:#00ff88;}
+
 .order{
-display:block;
-background:#19a451;
-margin-top:8px;
-padding:8px;
+display:inline-block;
+margin-top:10px;
+padding:8px 18px;
+background:#00ff88;
 border-radius:10px;
-color:white;
-text-decoration:none;
+color:black;
 font-weight:bold;
+text-decoration:none;
 }
 
 .lang{
 position:fixed;
-bottom:18px;
-right:12px;
+right:10px;
+bottom:20px;
 display:flex;
 flex-direction:column;
-gap:6px;
+gap:8px;
 }
 
-.lang button{
+.lang div{
 background:black;
-color:white;
-border:none;
-padding:7px 10px;
-border-radius:10px;
-box-shadow:0 0 8px white;
+padding:6px 10px;
+border-radius:8px;
+box-shadow:0 0 8px #fff;
 }
 </style>
 </head>
 
 <body>
-
 <div class="overlay">
 
-<!-- HOME -->
-<div id="home">
 <img src="IMG_2044.jpeg" class="logo">
 <h1>GREEDFARM</h1>
 
-<button class="btn green" onclick="openPage('hash')">🍫 Hash</button>
-<button class="btn cali" onclick="openPage('cali')">🇺🇸 Cali</button>
-<button class="btn green" onclick="openPage('spain')">🇪🇸 Spain</button>
-<button class="btn orange" onclick="openPage('promo')">🔥 Promo</button>
-
-<a href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">
-<button class="btn red">💳 Payment</button>
-</a>
-</div>
+<a class="btn hash" onclick="openCat('hash')">🍫 Hash</a>
+<a class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</a>
+<a class="btn spain" onclick="openCat('spain')">🇪🇸 Spain</a>
+<a class="btn promo" onclick="openCat('promo')">🔥 Promozioni</a>
+<a class="btn pay" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">💳 Pagamento</a>
 
 <!-- HASH -->
-<div id="hash" class="page">
-<div class="videoBox"><video controls src="VID_20260129_020719_108.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260212_024354_063.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_211142_496.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_212432_315.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_213406_222.mov"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="telegram_video.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<button class="btn green" onclick="goHome()">⬅ Retour</button>
+<div id="hash" class="section">
+
+<div class="video">
+<video src="VID_20260129_020719_108.mp4" controls></video>
+<div class="price">Static Mountain Giants</div>
+<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">ORDINA</a>
+</div>
+
+<div class="video">
+<video src="VID_20260212_024354_063.mp4" controls></video>
+<div class="price">Frozen Fruitella</div>
+<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">ORDINA</a>
+</div>
+
+<div class="video">
+<video src="VID_20260218_211142_496.mp4" controls></video>
+<div class="price">Premium Frozen</div>
+<a class="order" href="#">ORDINA</a>
+</div>
+
 </div>
 
 <!-- CALI -->
-<div id="cali" class="page">
-<div class="videoBox"><video controls src="VID_20260218_212243_412.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_213405_917.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_213406_052.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_213406_351.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<div class="videoBox"><video controls src="VID_20260218_213406_770.mp4"></video><a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">Commander</a></div>
-<button class="btn cali" onclick="goHome()">⬅ Retour</button>
+<div id="cali" class="section">
+
+<div class="video">
+<video src="VID_20260218_212243_412.mp4" controls></video>
+<div class="price">Wedding Cake</div>
+<a class="order" href="#">ORDINA</a>
 </div>
 
-<!-- SPAIN -->
-<div id="spain" class="page">
-<h2>Spain bientôt</h2>
-<button class="btn green" onclick="goHome()">⬅ Retour</button>
+<div class="video">
+<video src="VID_20260218_213405_917.mp4" controls></video>
+<div class="price">Super Runtz</div>
+<a class="order" href="#">ORDINA</a>
 </div>
 
-<!-- PROMO -->
-<div id="promo" class="page">
-<h2>Promo bientôt</h2>
-<button class="btn orange" onclick="goHome()">⬅ Retour</button>
+<div class="video">
+<video src="VID_20260218_213406_052.mp4" controls></video>
+<div class="price">Sherbert Gelato</div>
+<a class="order" href="#">ORDINA</a>
 </div>
 
 </div>
 
 <div class="lang">
-<button onclick="langClick()">FR</button>
-<button onclick="langClick()">IT</button>
-<button onclick="langClick()">EN</button>
+<div>IT</div>
+<div>FR</div>
+<div>EN</div>
+</div>
+
 </div>
 
 <script>
-function openPage(id){
-document.getElementById("home").style.display="none";
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+function openCat(id){
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
 document.getElementById(id).style.display="block";
-}
-
-function goHome(){
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-document.getElementById("home").style.display="block";
-}
-
-function langClick(){
-document.body.style.filter="brightness(1.2)";
-setTimeout(()=>document.body.style.filter="brightness(1)",150);
 }
 </script>
 
