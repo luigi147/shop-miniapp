@@ -3,23 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GreedFarm</title>
+<title>GREEDFARM</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial;
-background:#000;
+background:url("IMG_2044.jpeg") center/cover fixed;
 color:white;
 text-align:center;
-background-image:url("IMG_2044.jpeg");
-background-size:cover;
-background-position:center;
 }
 
 .overlay{
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,.65);
 min-height:100vh;
 padding:20px;
 }
@@ -27,12 +23,7 @@ padding:20px;
 .logo{
 width:110px;
 border-radius:20px;
-margin-top:20px;
 box-shadow:0 0 20px #00ff88;
-}
-
-h1{
-letter-spacing:4px;
 }
 
 .btn{
@@ -41,56 +32,73 @@ margin:12px auto;
 width:80%;
 padding:16px;
 border-radius:16px;
-font-size:18px;
 font-weight:bold;
-text-decoration:none;
 color:white;
+text-decoration:none;
 }
 
-.hash{background:#1faa4b;}
-.cali{background:#19a7a3;}
-.spain{background:#1faa4b;}
-.promo{background:#f39c12;}
-.pay{background:#e53935;}
+.hash{background:#1faa4b}
+.cali{background:#19a7a3}
+.spain{background:#1faa4b}
+.promo{background:#f39c12}
+.pay{background:#e53935}
 
-.section{display:none;margin-top:20px;}
+.section{display:none;margin-top:20px}
 
 .video{
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,.6);
 padding:10px;
 margin:15px;
 border-radius:12px;
 }
 
-video{width:100%;border-radius:10px;}
+video{width:100%;border-radius:10px}
 
-.price{margin-top:8px;font-weight:bold;color:#00ff88;}
+.price{margin-top:8px;color:#00ff88;font-weight:bold}
 
 .order{
 display:inline-block;
-margin-top:10px;
+margin-top:8px;
 padding:8px 18px;
 background:#00ff88;
-border-radius:10px;
 color:black;
 font-weight:bold;
+border-radius:10px;
 text-decoration:none;
 }
 
-.lang{
+/* panier */
+.cartBtn{
 position:fixed;
-right:10px;
 bottom:20px;
-display:flex;
-flex-direction:column;
-gap:8px;
+right:20px;
+background:#00ff88;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+cursor:pointer;
 }
 
-.lang div{
+.cartCount{
+position:absolute;
+top:-5px;
+right:-5px;
+background:red;
+color:white;
+border-radius:50%;
+font-size:12px;
+padding:2px 6px;
+}
+
+.cartBox{
+display:none;
+position:fixed;
+bottom:80px;
+right:20px;
 background:black;
-padding:6px 10px;
-border-radius:8px;
-box-shadow:0 0 8px #fff;
+padding:15px;
+border-radius:12px;
+width:220px;
 }
 </style>
 </head>
@@ -103,60 +111,45 @@ box-shadow:0 0 8px #fff;
 
 <a class="btn hash" onclick="openCat('hash')">🍫 Hash</a>
 <a class="btn cali" onclick="openCat('cali')">🇺🇸 Cali</a>
-<a class="btn spain" onclick="openCat('spain')">🇪🇸 Spain</a>
-<a class="btn promo" onclick="openCat('promo')">🔥 Promozioni</a>
-<a class="btn pay" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">💳 Pagamento</a>
+<a class="btn spain" onclick="openCat('spain')">🇪🇸 Spagna</a>
+<a class="btn promo">🔥 Promo</a>
 
 <!-- HASH -->
 <div id="hash" class="section">
-
 <div class="video">
 <video src="VID_20260129_020719_108.mp4" controls></video>
 <div class="price">Static Mountain Giants</div>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">ORDINA</a>
+<button onclick="addCart('Static Mountain Giants')">🛒 Aggiungi</button>
 </div>
-
-<div class="video">
-<video src="VID_20260212_024354_063.mp4" controls></video>
-<div class="price">Frozen Fruitella</div>
-<a class="order" href="https://signal.me/#eu/7uo8JDWQw_eAlZMD7G52l1FMoH0cO4vfZrj2CdaREAJdkTsVOGNPx4omsTJmkm9I">ORDINA</a>
-</div>
-
-<div class="video">
-<video src="VID_20260218_211142_496.mp4" controls></video>
-<div class="price">Premium Frozen</div>
-<a class="order" href="#">ORDINA</a>
-</div>
-
 </div>
 
 <!-- CALI -->
 <div id="cali" class="section">
-
-<div class="video">
-<video src="VID_20260218_212243_412.mp4" controls></video>
-<div class="price">Wedding Cake</div>
-<a class="order" href="#">ORDINA</a>
-</div>
-
 <div class="video">
 <video src="VID_20260218_213405_917.mp4" controls></video>
 <div class="price">Super Runtz</div>
-<a class="order" href="#">ORDINA</a>
+<button onclick="addCart('Super Runtz')">🛒 Aggiungi</button>
+</div>
 </div>
 
+<!-- SPAIN -->
+<div id="spain" class="section">
 <div class="video">
-<video src="VID_20260218_213406_052.mp4" controls></video>
-<div class="price">Sherbert Gelato</div>
-<a class="order" href="#">ORDINA</a>
+<video src="VID_20260218_212243_412.mp4" controls></video>
+<div class="price">Wedding Cake</div>
+<button onclick="addCart('Wedding Cake')">🛒 Aggiungi</button>
+</div>
 </div>
 
+<!-- panier -->
+<div class="cartBtn" onclick="toggleCart()">
+🛒
+<span id="count" class="cartCount">0</span>
 </div>
 
-<div class="lang">
-<div>IT</div>
-<div>FR</div>
-<div>EN</div>
+<div id="cartBox" class="cartBox">
+<h3>Carrello</h3>
+<ul id="cartList"></ul>
 </div>
 
 </div>
@@ -165,6 +158,29 @@ box-shadow:0 0 8px #fff;
 function openCat(id){
 document.querySelectorAll(".section").forEach(s=>s.style.display="none");
 document.getElementById(id).style.display="block";
+}
+
+let cart=[];
+
+function addCart(name){
+cart.push(name);
+document.getElementById("count").innerText=cart.length;
+updateCart();
+}
+
+function updateCart(){
+let list=document.getElementById("cartList");
+list.innerHTML="";
+cart.forEach(i=>{
+let li=document.createElement("li");
+li.innerText=i;
+list.appendChild(li);
+});
+}
+
+function toggleCart(){
+let c=document.getElementById("cartBox");
+c.style.display=c.style.display=="block"?"none":"block";
 }
 </script>
 
